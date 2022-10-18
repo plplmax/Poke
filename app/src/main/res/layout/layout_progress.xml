@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.skydoves.progressview.ProgressView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pokemon_progress"
+    android:layout_width="match_parent"
+    android:layout_height="18dp"
+    app:progressView_colorBackground="@color/cardview_dark_background"
+    app:progressView_labelSize="14sp"
+    app:progressView_radius="12dp"
+    app:progressView_labelColorOuter="?attr/colorOnSurface" />

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/layout_toolbar"
+        layout="@layout/layout_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="24dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/pokemon_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.MaterialCardView.Cut">
+
+                <ImageView
+                    android:id="@+id/pokemon_image"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:scaleType="center"
+                    tools:srcCompat="@drawable/ic_launcher_background" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/pokemon_name"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pokemon_card"
+                tools:text="Bulbasaur" />
+
+            <TextView
+                android:id="@+id/pokemon_weight"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toStartOf="@id/pokemon_height"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pokemon_name"
+                tools:text="10.5 KG" />
+
+            <TextView
+                android:id="@+id/pokemon_weight_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/weight"
+                app:layout_constraintEnd_toEndOf="@id/pokemon_weight"
+                app:layout_constraintStart_toStartOf="@id/pokemon_weight"
+                app:layout_constraintTop_toBottomOf="@id/pokemon_weight" />
+
+            <TextView
+                android:id="@+id/pokemon_height"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/pokemon_weight"
+                app:layout_constraintTop_toBottomOf="@id/pokemon_name"
+                tools:text="10.5 M" />
+
+            <TextView
+                android:id="@+id/pokemon_height_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/height"
+                app:layout_constraintEnd_toEndOf="@id/pokemon_height"
+                app:layout_constraintStart_toStartOf="@id/pokemon_height"
+                app:layout_constraintTop_toBottomOf="@id/pokemon_height" />
+
+            <TextView
+                android:id="@+id/hp_label"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/hp"
+                android:textAllCaps="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pokemon_weight_label" />
+
+            <include
+                android:id="@+id/hp_progress"
+                layout="@layout/layout_progress"
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="36dp"
+                app:layout_constraintBottom_toBottomOf="@id/hp_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/hp_label"
+                app:layout_constraintTop_toTopOf="@id/hp_label" />
+
+            <TextView
+                android:id="@+id/atk_label"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/atk"
+                android:textAllCaps="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hp_label" />
+
+            <include
+                android:id="@+id/atk_progress"
+                layout="@layout/layout_progress"
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="36dp"
+                app:layout_constraintBottom_toBottomOf="@id/atk_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/atk_label"
+                app:layout_constraintTop_toTopOf="@id/atk_label" />
+
+            <TextView
+                android:id="@+id/def_label"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/def"
+                android:textAllCaps="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/atk_label" />
+
+            <include
+                android:id="@+id/def_progress"
+                layout="@layout/layout_progress"
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="36dp"
+                app:layout_constraintBottom_toBottomOf="@id/def_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/def_label"
+                app:layout_constraintTop_toTopOf="@id/def_label" />
+
+            <TextView
+                android:id="@+id/spd_label"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/spd"
+                android:textAllCaps="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/def_label" />
+
+            <include
+                android:id="@+id/spd_progress"
+                layout="@layout/layout_progress"
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="36dp"
+                app:layout_constraintBottom_toBottomOf="@id/spd_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/spd_label"
+                app:layout_constraintTop_toTopOf="@id/spd_label" />
+
+            <TextView
+                android:id="@+id/exp_label"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/exp"
+                android:textAllCaps="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spd_label" />
+
+            <include
+                android:id="@+id/exp_progress"
+                layout="@layout/layout_progress"
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="36dp"
+                app:layout_constraintBottom_toBottomOf="@id/exp_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/exp_label"
+                app:layout_constraintTop_toTopOf="@id/exp_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

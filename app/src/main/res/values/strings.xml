@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Poke</string>
+    <string name="pokemons_empty">Pokemons are empty</string>
+    <string name="retry">Retry</string>
+    <string name="hp">Hp</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="atk">Atk</string>
+    <string name="def">Def</string>
+    <string name="spd">Spd</string>
+    <string name="exp">Exp</string>
+</resources>
